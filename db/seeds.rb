@@ -17,5 +17,15 @@ puts "Creating freebies..."
 # * and a freebie belongs to a company.                         *
 # ***************************************************************
 # Create freebies Here
+companyIds = Company.pluck(:id)
+devIds = Dev.pluck(:id) 
+30.times do
+  Freebie.create(
+    company_id: companyIds.sample,
+    dev_id: devIds.sample,
+    item_name: Faker::IndustrySegments.industry,
+    value: rand(0..100)
+  )
+end
 
 puts "Seeding done!"
