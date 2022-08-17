@@ -23,8 +23,8 @@ devIds = Dev.pluck(:id)
   Freebie.create(
     company_id: companyIds.sample,
     dev_id: devIds.sample,
-    item_name: Faker::IndustrySegments.industry,
-    value: rand(0..100)
+    item_name: Faker::Device.model_name,
+    value: rand(200..300)
   )
 end
 
